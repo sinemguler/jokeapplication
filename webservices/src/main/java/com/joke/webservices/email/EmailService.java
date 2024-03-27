@@ -29,10 +29,10 @@ public class EmailService {
     @PostConstruct
     public void initialize() {
         this.mailSender = new JavaMailSenderImpl();
-        mailSender.setHost(jokeProperties.getEmail().host());
-        mailSender.setPort(jokeProperties.getEmail().port());
-        mailSender.setUsername(jokeProperties.getEmail().username());
-        mailSender.setPassword(jokeProperties.getEmail().password());
+        mailSender.setHost("smtp.ethereal.email");
+        mailSender.setPort(587);
+        mailSender.setUsername("@ethereal.email");
+        mailSender.setPassword("");
 
         Properties properties = mailSender.getJavaMailProperties();
         properties.put("mail.smtp.starttls.enable", "true");
